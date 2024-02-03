@@ -1,9 +1,8 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-import iziToast from "izitoast";
-import "izitoast/dist/css/iziToast.min.css";
-
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 const galleryContainer = document.querySelector('.gallery');
 
@@ -50,6 +49,7 @@ searchForm.addEventListener('submit', function (event) {
     });
 });
 
+
 const toastOptions = {
   titleColor: '#FFFFFF',
   messageColor: '#FFFFFF',
@@ -63,6 +63,7 @@ const toastOptions = {
   messageLineHeight: '24px',
 };
 
+
 function toastError(message) {
   iziToast.show({
     message,
@@ -72,6 +73,7 @@ function toastError(message) {
     ...toastOptions,
   });
 }
+
 
 function toastSuccess(message) {
   iziToast.show({
@@ -83,7 +85,9 @@ function toastSuccess(message) {
   });
 }
 
+
 const BASE_URL = 'https://pixabay.com/api/';
+
 
 function fetchImages(q) {
   const searchParams = new URLSearchParams({
@@ -104,6 +108,7 @@ function fetchImages(q) {
       throw error;
     });
 }
+
 
 function createGallery({
   largeImageURL,
